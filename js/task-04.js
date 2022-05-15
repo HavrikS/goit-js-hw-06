@@ -6,8 +6,6 @@ let counterValue = 0;
 
 valueEl.textContent = counterValue;
 
-console.log(valueEl.textContent);
-
 decrementBtn.addEventListener("click", onDecrementBtnClick);
 
 incrementBtn.addEventListener("click", onIncrementBtnClick);
