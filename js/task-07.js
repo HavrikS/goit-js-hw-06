@@ -5,7 +5,6 @@ function onFontSizeControlInput() {
     text.style.fontSize = `${fontSizeControl.value}px`;
 };
 
-document.addEventListener('DOMContentLoaded', onFontSizeControlInput);
 
 fontSizeControl.addEventListener('input', onFontSizeControlInput);
 

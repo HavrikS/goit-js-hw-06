@@ -15,15 +15,20 @@ function getRandomHexColor() {
 function createBoxes(amount) {
   let box = [];
   for (let i = 0; i < amount; i += 1) {
-    const divEl = document.createElement('div');
-    const newSize = 30 + 10 * i;
-    divEl.style.width = `${newSize}px`;
-    divEl.style.height = `${newSize}px`;
+    const divEl = document.createElement('div');    
+    if (i > 0) {
+      divEl.style.width = `${parseInt(box[i - 1].style.width) + 10}px`;
+      divEl.style.height = `${parseInt(box[i - 1].style.height) + 10}px`;      
+    } else {
+      divEl.style.width = "30px";
+      divEl.style.height = "30px";
+    }
+    
     divEl.style.backgroundColor = getRandomHexColor();    
     box.push(divEl)        
   } 
   refs.boxes.append(...box);   
-}
+};
 
 function onButtonCreateClick() {
   createBoxes(refs.inputEl.value)
